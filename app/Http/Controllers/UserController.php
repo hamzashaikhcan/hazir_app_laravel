@@ -72,7 +72,7 @@ class UserController extends Controller
     // ----------
     public function getUserBookings($id)
     {
-        $userbookings = Booking::with('driver')->with('car')->where('user_id', $id)->get();
+        $userbookings = Booking::with('driver')->with('car.images')->where('user_id', $id)->get();
         return response()->json(
             $userbookings,
         );

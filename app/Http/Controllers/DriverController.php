@@ -75,12 +75,9 @@ class DriverController extends Controller
         }
     }
     // ----------
-    public function getDriverCars(Request $request)
+    public function getDriverCars($id)
     {
-        $validator = Validator::make($request->all(), [
-            'id' => 'required',
-        ]);
-        $drivercars = Car::with('images')->where('driver_id', $request->id)->get();
+        $drivercars = Car::where('driver_id', $id)->get();
         return response()->json(
             $drivercars,
        );
@@ -88,7 +85,7 @@ class DriverController extends Controller
     // --------
     public function getDriverBookings($id)
     {
-        $driverbookings = Booking::with('user')->with('car')->where('driver_id', $id)->get();
+        $driverbookings = Booking::with('user')->with('car.images')->where('driver_id', $id)->get();
         return response()->json(
             $driverbookings,
         );

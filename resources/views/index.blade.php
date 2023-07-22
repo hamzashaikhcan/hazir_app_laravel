@@ -12,7 +12,7 @@
 
         <p><strong>Car Model : </strong> {{$car->car_model}}</p>
         <p><strong>Car Number : </strong> {{$car->car_model}}</p>
-        <img src="{{ asset('car-images/' . $car->car_pictures) }}" style="width: 100px;" alt="this is image">
+        <img src="{{ asset('car-images/' . $car->image) }}" style="width: 100px;" alt="this is image">
       
     </div>
 

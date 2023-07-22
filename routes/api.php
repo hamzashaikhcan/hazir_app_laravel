@@ -28,11 +28,15 @@ Route::get('userbookings/{id}', [UserController::class, 'getUserBookings']);
 // ----- driver controller
 Route::post('driver/register', [DriverController::class, 'register']);
 Route::post('driver/login', [DriverController::class, 'login']);
-Route::post('drivercars', [DriverController::class, 'getDriverCars']);
+Route::get('drivercars/{id}', [DriverController::class, 'getDriverCars']);
 Route::get('driverbookings/{id}', [DriverController::class, 'getDriverBookings']);
 Route::post('driverupdate', [DriverController::class, 'driverupdateProfile']);
 // -------- car controller 
 Route::post('storeCar', [CarController::class, 'storeCar']);
 Route::get('allcars', [CarController::class, 'allCar']);
+Route::get('deletecar/{id}', [CarController::class, 'deleteCar']);
+Route::post('carupdate/{id}', [CarController::class, 'carUpdate']);
+Route::get('carstatus/{id}', [CarController::class, 'carStatus']);
+Route::post('searchcars', [CarController::class, 'searchCars']);
 // ---------- booking controller 
 Route::post('bookCar', [BookingController::class, 'bookCar']);
